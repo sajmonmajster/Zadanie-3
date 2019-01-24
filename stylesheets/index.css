@@ -656,7 +656,7 @@ main .signature:hover {
     border: 1px solid rgba(178, 192, 200, 0.3)
 }
 
-#container>header .mostVisitedContainer ul.mostVisited li:hover {
+:host(:hover) {
     opacity: 1
 }
 
@@ -1442,10 +1442,10 @@ nav#sidebar ul.sourcesConstant li.active span {
     font-weight: 600
 }
 
-nav#sidebar ul.sources li:hover .feedLink,
+:host(:hover) .feedLink,
 nav#sidebar ul.sources li.active .feedLink,
-nav#sidebar ul.sourcesConstant li:hover .feedLink,
-nav#sidebar ul.sourcesConstant li.active .feedLink {
+:host(:hover) .feedLink,
+.feedLink {
     opacity: 1
 }
 
@@ -1702,11 +1702,11 @@ main .home-overlay.show {
     transition: opacity 0.15s ease-in
 }
 
-main section#sticky {
+{
     white-space: nowrap
 }
 
-main section#sticky a.more {
+a.more {
     display: block;
     width: 80px;
     height: 20px;
@@ -1722,19 +1722,19 @@ main section#sticky a.more {
     -webkit-transition: background .3s
 }
 
-main section#sticky a.more:hover {
+a.more:hover {
     background: rgba(0, 0, 0, 0.05)
 }
 
-main section#sticky ul.picks,
-main section#sticky ul.home {
+ul.picks,
+ul.home {
     text-align: center;
     display: grid;
     grid-gap: .2vw
 }
 
-main section#sticky ul.picks li,
-main section#sticky ul.home li {
+ul.picks li,
+ul.home li {
     position: relative;
     display: block;
     float: left;
@@ -1742,15 +1742,15 @@ main section#sticky ul.home li {
     transform: translateZ(0)
 }
 
-main section#sticky ul.picks li.playing .postInfo,
-main section#sticky ul.picks li.playing .postPhoto:after,
-main section#sticky ul.home li.playing .postInfo,
-main section#sticky ul.home li.playing .postPhoto:after {
+ul.picks li.playing .postInfo,
+ul.picks li.playing .postPhoto:after,
+ul.home li.playing .postInfo,
+ul.home li.playing .postPhoto:after {
     display: none
 }
 
-main section#sticky ul.picks li.playing .feedLink .postPhoto,
-main section#sticky ul.home li.playing .feedLink .postPhoto {
+ul.picks li.playing .feedLink .postPhoto,
+ul.home li.playing .feedLink .postPhoto {
     position: absolute;
     left: -10px;
     right: -10px;
@@ -1760,33 +1760,33 @@ main section#sticky ul.home li.playing .feedLink .postPhoto {
     height: auto
 }
 
-main section#sticky ul.picks li.playing .feedLink .postPhoto .share,
-main section#sticky ul.home li.playing .feedLink .postPhoto .share {
+ul.picks li.playing .feedLink .postPhoto .share,
+ul.home li.playing .feedLink .postPhoto .share {
     margin: 10px
 }
 
-main section#sticky ul.picks li.playing .feedLink .postPhoto .thumbnail img,
-main section#sticky ul.home li.playing .feedLink .postPhoto .thumbnail img {
+ul.picks li.playing .feedLink .postPhoto .thumbnail img,
+ul.home li.playing .feedLink .postPhoto .thumbnail img {
     filter: blur(10px)
 }
 
-main section#sticky ul.picks li.ng-leave,
-main section#sticky ul.home li.ng-leave {
+ul.picks li.ng-leave,
+ul.home li.ng-leave {
     -webkit-animation: 0.5s muzli-fade-out;
     -moz-animation: 0.5s muzli-fade-out;
     -o-animation: 0.5s muzli-fade-out;
     animation: 0.5s muzli-fade-out
 }
 
-main section#sticky ul.picks li.loading-gif:hover .postPhoto .badge,
-main section#sticky ul.home li.loading-gif:hover .postPhoto .badge {
+ul.picks li.loading-gif:hover .postPhoto .badge,
+ul.home li.loading-gif:hover .postPhoto .badge {
     display: block;
     background-image: none;
     padding: 0
 }
 
-main section#sticky ul.picks li.loading-gif:hover .postPhoto .badge:after,
-main section#sticky ul.home li.loading-gif:hover .postPhoto .badge:after {
+ul.picks li.loading-gif:hover .postPhoto .badge:after,
+ul.home li.loading-gif:hover .postPhoto .badge:after {
     content: "";
     background: url(data:image/gif;base64,R0lGODlhYAA0AMQQAP///x0dHU9PT56envr6+khISOfn5ygoKPn5+UdHRyIiIicnJ52dnUtLSyMjI0ZGRv///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTM4IDc5LjE1OTgyNCwgMjAxNi8wOS8xNC0wMTowOTowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDphMjJmODQ4NC02MjY3LTRjZjgtOTZlYy1jN2QwMWM4MmQyOWQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QkVDMDdBREI2ODEyMTFFNzhDQUI5QjgyMEMwQkQ1NDgiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QkVDMDdBREE2ODEyMTFFNzhDQUI5QjgyMEMwQkQ1NDgiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTcgKE1hY2ludG9zaCkiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDphMjJmODQ4NC02MjY3LTRjZjgtOTZlYy1jN2QwMWM4MmQyOWQiIHN0UmVmOmRvY3VtZW50SUQ9Inht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) no-repeat center center;
     background-size: cover;
@@ -1795,48 +1795,48 @@ main section#sticky ul.home li.loading-gif:hover .postPhoto .badge:after {
     display: block !important
 }
 
-main section#sticky ul.picks li.showSharePromo .tile:hover .postMeta,
-main section#sticky ul.home li.showSharePromo .tile:hover .postMeta {
+ul.picks li.showSharePromo .tile:hover .postMeta,
+ul.home li.showSharePromo .tile:hover .postMeta {
     bottom: 0px
 }
 
-main section#sticky ul.picks li.showSharePromo .tile:hover .postMeta .postInfo,
-main section#sticky ul.home li.showSharePromo .tile:hover .postMeta .postInfo {
+ul.picks li.showSharePromo .tile:hover .postMeta .postInfo,
+ul.home li.showSharePromo .tile:hover .postMeta .postInfo {
     opacity: 0
 }
 
-main section#sticky ul.picks li.showSharePromo .postPhoto img,
-main section#sticky ul.home li.showSharePromo .postPhoto img {
+ul.picks li.showSharePromo .postPhoto img,
+ul.home li.showSharePromo .postPhoto img {
     filter: blur(3px)
 }
 
-main section#sticky ul.picks li.showMenu .tile:after,
-main section#sticky ul.home li.showMenu .tile:after {
+ul.picks li.showMenu .tile:after,
+ul.home li.showMenu .tile:after {
     z-index: 0
 }
 
-main section#sticky ul.picks li.showMenu .postMeta,
-main section#sticky ul.home li.showMenu .postMeta {
+ul.picks li.showMenu .postMeta,
+ul.home li.showMenu .postMeta {
     bottom: 0px
 }
 
-main section#sticky ul.picks li.showMenu .postMeta .post-menu .icon-menu,
-main section#sticky ul.home li.showMenu .postMeta .post-menu .icon-menu {
+ul.picks li.showMenu .postMeta .post-menu .icon-menu,
+ul.home li.showMenu .postMeta .post-menu .icon-menu {
     color: #FFF
 }
 
-main section#sticky ul.picks li.showMenu .postMeta .post-menu .icon-menu:hover,
-main section#sticky ul.home li.showMenu .postMeta .post-menu .icon-menu:hover {
+ul.picks li.showMenu .postMeta .post-menu .icon-menu:hover,
+ul.home li.showMenu .postMeta .post-menu .icon-menu:hover {
     color: #FFF
 }
 
-main section#sticky ul.picks li.hidden,
-main section#sticky ul.home li.hidden {
+ul.picks li.hidden,
+ul.home li.hidden {
     display: none
 }
 
-main section#sticky ul.picks li .tile,
-main section#sticky ul.home li .tile {
+ul.picks li .tile,
+ul.home li .tile {
     background-color: #EBEBEB;
     box-shadow: 0 2px 20px 0px rgba(0, 0, 0, 0.05);
     transition: box-shadow .35s ease-out;
@@ -1845,21 +1845,21 @@ main section#sticky ul.home li .tile {
     height: 100%
 }
 
-main section#sticky ul.picks li .tile:hover .postMeta,
-main section#sticky ul.home li .tile:hover .postMeta {
+ul.picks li .tile:hover .postMeta,
+ul.home li .tile:hover .postMeta {
     transition-delay: .18s;
     bottom: 0
 }
 
-main section#sticky ul.picks li .tile:before,
-main section#sticky ul.home li .tile:before {
+ul.picks li .tile:before,
+ul.home li .tile:before {
     content: "";
     padding: 75% 0 0;
     display: inline-block
 }
 
-main section#sticky ul.picks li .feedLink,
-main section#sticky ul.home li .feedLink {
+ul.picks li .feedLink,
+ul.home li .feedLink {
     position: absolute;
     top: 0;
     left: 0;
@@ -1872,8 +1872,8 @@ main section#sticky ul.home li .feedLink {
     overflow: hidden
 }
 
-main section#sticky ul.picks li .feedLink .postPhoto,
-main section#sticky ul.home li .feedLink .postPhoto {
+ul.picks li .feedLink .postPhoto,
+ul.home li .feedLink .postPhoto {
     background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjVweCIgaGVpZ2h0PSI1cHgiIHZpZXdCb3g9IjAgMCAyNSA1IiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPgogICAgPCEtLSBHZW5lcmF0b3I6IFNrZXRjaCA0MS4yICgzNTM5NykgLSBodHRwOi8vd3d3LmJvaGVtaWFuY29kaW5nLmNvbS9za2V0Y2ggLS0+CiAgICA8dGl0bGU+R3JvdXAgMzQ8L3RpdGxlPgogICAgPGRlc2M+Q3JlYXRlZCB3aXRoIFNrZXRjaC48L2Rlc2M+CiAgICA8ZGVmcz48L2RlZnM+CiAgICA8ZyBpZD0ibGlnaHQiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgogICAgICAgIDxnIGlkPSJHcm91cC0zNCIgZmlsbD0iI0Q4RDhEOCI+CiAgICAgICAgICAgIDxjaXJjbGUgaWQ9Ik92YWwiIGN4PSIyLjUiIGN5PSIyLjUiIHI9IjIuNSI+PC9jaXJjbGU+CiAgICAgICAgICAgIDxjaXJjbGUgaWQ9Ik92YWwiIGN4PSIxMi41IiBjeT0iMi41IiByPSIyLjUiPjwvY2lyY2xlPgogICAgICAgICAgICA8Y2lyY2xlIGlkPSJPdmFsIiBjeD0iMjIuNSIgY3k9IjIuNSIgcj0iMi41Ij48L2NpcmNsZT4KICAgICAgICA8L2c+CiAgICA8L2c+Cjwvc3ZnPg==);
     background-repeat: no-repeat;
     background-position: center center;
@@ -1884,8 +1884,8 @@ main section#sticky ul.home li .feedLink .postPhoto {
     height: 100%
 }
 
-main section#sticky ul.picks li .feedLink .postPhoto:before,
-main section#sticky ul.home li .feedLink .postPhoto:before {
+ul.picks li .feedLink .postPhoto:before,
+ul.home li .feedLink .postPhoto:before {
     content: "";
     background: -webkit-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.3) 100%);
     background: linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.3) 100%);
@@ -1898,8 +1898,8 @@ main section#sticky ul.home li .feedLink .postPhoto:before {
     z-index: 1
 }
 
-main section#sticky ul.picks li .feedLink .postPhoto img,
-main section#sticky ul.home li .feedLink .postPhoto img {
+ul.picks li .feedLink .postPhoto img,
+ul.home li .feedLink .postPhoto img {
     height: 100%;
     width: 100%;
     object-position: center;
@@ -1907,8 +1907,8 @@ main section#sticky ul.home li .feedLink .postPhoto img {
     border: 0
 }
 
-main section#sticky ul.picks li .feedLink .postPhoto .share-promo,
-main section#sticky ul.home li .feedLink .postPhoto .share-promo {
+ul.picks li .feedLink .postPhoto .share-promo,
+ul.home li .feedLink .postPhoto .share-promo {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -1919,8 +1919,8 @@ main section#sticky ul.home li .feedLink .postPhoto .share-promo {
     animation: fadeIn 0.35s ease-in forwards
 }
 
-main section#sticky ul.picks li .feedLink .postPhoto .share-promo .sharers,
-main section#sticky ul.home li .feedLink .postPhoto .share-promo .sharers {
+ul.picks li .feedLink .postPhoto .share-promo .sharers,
+ul.home li .feedLink .postPhoto .share-promo .sharers {
     position: absolute;
     text-align: center;
     width: 100%;
@@ -1928,8 +1928,8 @@ main section#sticky ul.home li .feedLink .postPhoto .share-promo .sharers {
     transform: translateY(-50%)
 }
 
-main section#sticky ul.picks li .feedLink .postPhoto .share-promo .sharers h4,
-main section#sticky ul.home li .feedLink .postPhoto .share-promo .sharers h4 {
+ul.picks li .feedLink .postPhoto .share-promo .sharers h4,
+ul.home li .feedLink .postPhoto .share-promo .sharers h4 {
     font-size: 14px;
     font-weight: 700;
     line-height: 20px;
@@ -1940,8 +1940,8 @@ main section#sticky ul.home li .feedLink .postPhoto .share-promo .sharers h4 {
     white-space: initial
 }
 
-main section#sticky ul.picks li .feedLink .postPhoto .share-promo .sharers span,
-main section#sticky ul.home li .feedLink .postPhoto .share-promo .sharers span {
+ul.picks li .feedLink .postPhoto .share-promo .sharers span,
+ul.home li .feedLink .postPhoto .share-promo .sharers span {
     display: inline-block;
     width: 26px;
     height: 26px;
@@ -1958,24 +1958,24 @@ main section#sticky ul.home li .feedLink .postPhoto .share-promo .sharers span {
     transition: color 0.35s, background-color 0.35s
 }
 
-main section#sticky ul.picks li .feedLink .postPhoto .share-promo .sharers span.twitter,
-main section#sticky ul.home li .feedLink .postPhoto .share-promo .sharers span.twitter {
+ul.picks li .feedLink .postPhoto .share-promo .sharers span.twitter,
+ul.home li .feedLink .postPhoto .share-promo .sharers span.twitter {
     font-size: 10px
 }
 
-main section#sticky ul.picks li .feedLink .postPhoto .share-promo .sharers span.linkedin,
-main section#sticky ul.home li .feedLink .postPhoto .share-promo .sharers span.linkedin {
+ul.picks li .feedLink .postPhoto .share-promo .sharers span.linkedin,
+ul.home li .feedLink .postPhoto .share-promo .sharers span.linkedin {
     font-size: 11px
 }
 
-main section#sticky ul.picks li .feedLink .postPhoto .share-promo .sharers span:hover,
-main section#sticky ul.home li .feedLink .postPhoto .share-promo .sharers span:hover {
+ul.picks li .feedLink .postPhoto .share-promo .sharers span:hover,
+ul.home li .feedLink .postPhoto .share-promo .sharers span:hover {
     color: #1f2325;
     background-color: #fff
 }
 
-main section#sticky ul.picks li .feedLink .postPhoto .share-promo .sharers span.close,
-main section#sticky ul.home li .feedLink .postPhoto .share-promo .sharers span.close {
+ul.picks li .feedLink .postPhoto .share-promo .sharers span.close,
+ul.home li .feedLink .postPhoto .share-promo .sharers span.close {
     float: right;
     background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAP9JREFUSA29VQsKgzAMlV1nsutst/D8Y4PuPbGliUlMBxoItW3ep0XNNF0VpZQZuSAf/2oSu3HMggOLJH8jGR/kSxQkJsRsWAwr173BsEDnfXwxSYuwFklMH0svwKPReR8pEQAscnLJq3YKKfJsTtQD95DauW8sAOxERmqFrwwwUyNI9SQiiPY0TzgPiKw7311hSF43HREstwhfgsoTjqCy3hQqpMhvIfvZm4F7noCROoXpE2DrakjI7GNcBGiPnOvunulUL2YIMjWad52PAEdqh8mru7QICr3f9eEX6ojI3zWKrIZzSH5wEtFwdMtMkyuR2rTYfs2+fE7Try7OGH8Xp6ZtzMonxgAAAABJRU5ErkJggg==) no-repeat center center;
     background-size: 15px;
@@ -1983,14 +1983,14 @@ main section#sticky ul.home li .feedLink .postPhoto .share-promo .sharers span.c
     margin: 0
 }
 
-main section#sticky ul.picks li .feedLink:hover .postPhoto:after,
-main section#sticky ul.home li .feedLink:hover .postPhoto:after {
+ul.picks li .feedLink:hover .postPhoto:after,
+ul.home li .feedLink:hover .postPhoto:after {
     top: 50%;
     opacity: 1
 }
 
-main section#sticky ul.picks li .postMeta,
-main section#sticky ul.home li .postMeta {
+ul.picks li .postMeta,
+ul.home li .postMeta {
     position: absolute;
     width: 100%;
     bottom: -60px;
@@ -2006,15 +2006,15 @@ main section#sticky ul.home li .postMeta {
     background: rgba(0, 0, 0, 0.2)
 }
 
-main section#sticky ul.picks li .postMeta .stats,
-main section#sticky ul.home li .postMeta .stats {
+ul.picks li .postMeta .stats,
+ul.home li .postMeta .stats {
     color: #B3C0C8;
     font-size: 11px;
     line-height: 22px
 }
 
-main section#sticky ul.picks li .postMeta .stats>span,
-main section#sticky ul.home li .postMeta .stats>span {
+ul.picks li .postMeta .stats>span,
+ul.home li .postMeta .stats>span {
     background-position: left center;
     background-repeat: no-repeat;
     background-size: 15px auto;
@@ -2022,42 +2022,42 @@ main section#sticky ul.home li .postMeta .stats>span {
     transition: color 0.35s
 }
 
-main section#sticky ul.picks li .postMeta .stats>span span,
-main section#sticky ul.home li .postMeta .stats>span span {
+ul.picks li .postMeta .stats>span span,
+ul.home li .postMeta .stats>span span {
     vertical-align: middle
 }
 
-main section#sticky ul.picks li .postMeta .stats>span [class^="icon-"],
-main section#sticky ul.home li .postMeta .stats>span [class^="icon-"] {
+ul.picks li .postMeta .stats>span [class^="icon-"],
+ul.home li .postMeta .stats>span [class^="icon-"] {
     margin-right: 2px;
     font-size: 1em
 }
 
-main section#sticky ul.picks li .postMeta .stats>span .icon-dribbble,
-main section#sticky ul.picks li .postMeta .stats>span .icon-ph,
-main section#sticky ul.home li .postMeta .stats>span .icon-dribbble,
-main section#sticky ul.home li .postMeta .stats>span .icon-ph {
+ul.picks li .postMeta .stats>span .icon-dribbble,
+ul.picks li .postMeta .stats>span .icon-ph,
+ul.home li .postMeta .stats>span .icon-dribbble,
+ul.home li .postMeta .stats>span .icon-ph {
     font-size: 1.4em
 }
 
-main section#sticky ul.picks li .postMeta .stats>span .icon-chat,
-main section#sticky ul.home li .postMeta .stats>span .icon-chat {
+ul.picks li .postMeta .stats>span .icon-chat,
+ul.home li .postMeta .stats>span .icon-chat {
     font-size: 1.2em
 }
 
-main section#sticky ul.picks li .postMeta .stats>span.action,
-main section#sticky ul.home li .postMeta .stats>span.action {
+ul.picks li .postMeta .stats>span.action,
+ul.home li .postMeta .stats>span.action {
     transition: color .35s;
     cursor: pointer
 }
 
-main section#sticky ul.picks li .postMeta .stats>span.action:hover,
-main section#sticky ul.home li .postMeta .stats>span.action:hover {
+ul.picks li .postMeta .stats>span.action:hover,
+ul.home li .postMeta .stats>span.action:hover {
     color: #778D99
 }
 
-main section#sticky ul.picks li .postMeta .postInfo,
-main section#sticky ul.home li .postMeta .postInfo {
+ul.picks li .postMeta .postInfo,
+ul.home li .postMeta .postInfo {
     position: absolute;
     color: #fff;
     bottom: 60px;
@@ -2068,8 +2068,8 @@ main section#sticky ul.home li .postMeta .postInfo {
     pointer-events: none
 }
 
-main section#sticky ul.picks li .postMeta .postInfo h3,
-main section#sticky ul.home li .postMeta .postInfo h3 {
+ul.picks li .postMeta .postInfo h3,
+ul.home li .postMeta .postInfo h3 {
     position: relative;
     transition-property: bottom, opacity;
     transition-duration: 0.4s;
@@ -2088,8 +2088,8 @@ main section#sticky ul.home li .postMeta .postInfo h3 {
     -webkit-box-orient: vertical
 }
 
-main section#sticky ul.picks li .postMeta .postInfo .source,
-main section#sticky ul.home li .postMeta .postInfo .source {
+ul.picks li .postMeta .postInfo .source,
+ul.home li .postMeta .postInfo .source {
     display: block;
     text-align: left;
     margin-right: 10px;
@@ -2099,37 +2099,37 @@ main section#sticky ul.home li .postMeta .postInfo .source {
     padding: 0 15px
 }
 
-main section#sticky ul.picks li .postMeta .details,
-main section#sticky ul.home li .postMeta .details {
+ul.picks li .postMeta .details,
+ul.home li .postMeta .details {
     display: block;
     height: 60px;
     padding: 15px;
     box-sizing: border-box
 }
 
-main section#sticky ul.picks li .postMeta .details .icon-menu,
-main section#sticky ul.home li .postMeta .details .icon-menu {
+ul.picks li .postMeta .details .icon-menu,
+ul.home li .postMeta .details .icon-menu {
     margin-top: 3px
 }
 
-main section#sticky ul.picks li .postMeta .details.ng-enter,
-main section#sticky ul.picks li .postMeta .details.ng-leave.ng-leave-active,
-main section#sticky ul.home li .postMeta .details.ng-enter,
-main section#sticky ul.home li .postMeta .details.ng-leave.ng-leave-active {
+ul.picks li .postMeta .details.ng-enter,
+ul.picks li .postMeta .details.ng-leave.ng-leave-active,
+ul.home li .postMeta .details.ng-enter,
+ul.home li .postMeta .details.ng-leave.ng-leave-active {
     animation: fadeIn 0.15s forwards reverse
 }
 
-main section#sticky ul.picks li .postMeta .details.ng-leave,
-main section#sticky ul.picks li .postMeta .details.ng-enter.ng-enter-active,
-main section#sticky ul.picks li .postMeta .details.visible,
-main section#sticky ul.home li .postMeta .details.ng-leave,
-main section#sticky ul.home li .postMeta .details.ng-enter.ng-enter-active,
-main section#sticky ul.home li .postMeta .details.visible {
+ul.picks li .postMeta .details.ng-leave,
+ul.picks li .postMeta .details.ng-enter.ng-enter-active,
+ul.picks li .postMeta .details.visible,
+ul.home li .postMeta .details.ng-leave,
+ul.home li .postMeta .details.ng-enter.ng-enter-active,
+ul.home li .postMeta .details.visible {
     animation: fadeIn 0.25s .3s forwards
 }
 
-main section#sticky ul.picks li .postMeta .favorite,
-main section#sticky ul.home li .postMeta .favorite {
+ul.picks li .postMeta .favorite,
+ul.home li .postMeta .favorite {
     cursor: pointer;
     display: block;
     width: 26px;
@@ -2145,46 +2145,46 @@ main section#sticky ul.home li .postMeta .favorite {
     transition: color 0.35s, border 0.35s
 }
 
-main section#sticky ul.picks li .postMeta .favorite.active,
-main section#sticky ul.home li .postMeta .favorite.active {
+ul.picks li .postMeta .favorite.active,
+ul.home li .postMeta .favorite.active {
     background-color: #FFB700
 }
 
-main section#sticky ul.picks li .postMeta .stats,
-main section#sticky ul.home li .postMeta .stats {
+ul.picks li .postMeta .stats,
+ul.home li .postMeta .stats {
     color: #fff;
     line-height: 30px
 }
 
-main section#sticky ul.picks li .postMeta .stats>span.action,
-main section#sticky ul.home li .postMeta .stats>span.action {
+ul.picks li .postMeta .stats>span.action,
+ul.home li .postMeta .stats>span.action {
     transition: text-shadow .35s
 }
 
-main section#sticky ul.picks li .postMeta .stats>span.action:hover,
-main section#sticky ul.home li .postMeta .stats>span.action:hover {
+ul.picks li .postMeta .stats>span.action:hover,
+ul.home li .postMeta .stats>span.action:hover {
     color: #FFF;
     text-shadow: 0 0 2px rgba(255, 255, 255, 0.7)
 }
 
-main section#sticky ul.picks li.hasStats .postMeta .stats,
-main section#sticky ul.home li.hasStats .postMeta .stats {
+ul.picks li.hasStats .postMeta .stats,
+ul.home li.hasStats .postMeta .stats {
     display: block
 }
 
-main section#sticky ul.picks li.video.playing .postMeta,
-main section#sticky ul.picks li.video.playing .postPhoto:before,
-main section#sticky ul.home li.video.playing .postMeta,
-main section#sticky ul.home li.video.playing .postPhoto:before {
+ul.picks li.video.playing .postMeta,
+ul.picks li.video.playing .postPhoto:before,
+ul.home li.video.playing .postMeta,
+ul.home li.video.playing .postPhoto:before {
     display: none
 }
 
-main section#sticky ul.picks li.video .feedLink .postPhoto:before,
-main section#sticky ul.home li.video .feedLink .postPhoto:before {
+ul.picks li.video .feedLink .postPhoto:before,
+ul.home li.video .feedLink .postPhoto:before {
     pointer-events: none
 }
 
-main section#sticky ul.picks {
+ul.picks {
     margin-bottom: 18px
 }
 
@@ -2235,13 +2235,13 @@ main ul.dummy {
     overflow: hidden
 }
 
-main section#sticky li,
-main section#feed li {
+li,
+{
     position: relative
 }
 
-main section#sticky li .tile .postPhoto .share,
-main section#feed li .tile .postPhoto .share {
+li .tile .postPhoto .share,
+.tile .postPhoto .share {
     position: absolute;
     right: 15px;
     top: 15px;
@@ -2253,8 +2253,8 @@ main section#feed li .tile .postPhoto .share {
     z-index: 2
 }
 
-main section#sticky li .tile .postPhoto .share span,
-main section#feed li .tile .postPhoto .share span {
+li .tile .postPhoto .share span,
+.tile .postPhoto .share span {
     display: block;
     width: 26px;
     height: 26px;
@@ -2271,26 +2271,26 @@ main section#feed li .tile .postPhoto .share span {
     transition: color 0.35s, background-color 0.35s
 }
 
-main section#sticky li .tile .postPhoto .share span.twitter,
-main section#feed li .tile .postPhoto .share span.twitter {
+li .tile .postPhoto .share span.twitter,
+.tile .postPhoto .share span.twitter {
     font-size: 10px;
     line-height: 28px
 }
 
-main section#sticky li .tile .postPhoto .share span.linkedin,
-main section#feed li .tile .postPhoto .share span.linkedin {
+li .tile .postPhoto .share span.linkedin,
+.tile .postPhoto .share span.linkedin {
     line-height: 24px;
     font-size: 11px
 }
 
-main section#sticky li .tile .postPhoto .share span:hover,
-main section#feed li .tile .postPhoto .share span:hover {
+li .tile .postPhoto .share span:hover,
+.tile .postPhoto .share span:hover {
     color: #1f2325;
     background-color: #fff
 }
 
-main section#sticky li .tile .postPhoto .badge,
-main section#feed li .tile .postPhoto .badge {
+li .tile .postPhoto .badge,
+.tile .postPhoto .badge {
     display: none;
     position: absolute;
     background-color: #FFFFFF;
@@ -2304,8 +2304,8 @@ main section#feed li .tile .postPhoto .badge {
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1)
 }
 
-main section#sticky li .tile .postPhoto .badge:after,
-main section#feed li .tile .postPhoto .badge:after {
+li .tile .postPhoto .badge:after,
+.tile .postPhoto .badge:after {
     content: "GIF";
     color: #555555;
     font-size: 13px;
@@ -2316,8 +2316,8 @@ main section#feed li .tile .postPhoto .badge:after {
     display: none
 }
 
-main section#sticky li .tile .postPhoto i,
-main section#feed li .tile .postPhoto i {
+li .tile .postPhoto i,
+.tile .postPhoto i {
     position: absolute;
     top: calc(50% - 20px);
     width: 100px;
@@ -2329,15 +2329,14 @@ main section#feed li .tile .postPhoto i {
     font-size: 16px
 }
 
-main section#sticky li .tile .postPhoto i:after,
-main section#feed li .tile .postPhoto i:after {
+li .tile .postPhoto i:after,
+.tile .postPhoto i:after {
     content: 'Hover to reveal';
     display: block;
     font-size: 11px
 }
 
-main section#sticky li .postInfo .created,
-main section#feed li .postInfo .created {
+.postInfo .created {
     color: rgba(179, 192, 200, 0.8);
     opacity: 0;
     font-size: 11px;
@@ -2348,14 +2347,14 @@ main section#feed li .postInfo .created {
     transition: opacity .35s
 }
 
-main section#sticky li .postMeta .post-menu,
-main section#feed li .postMeta .post-menu {
+li .postMeta .post-menu,
+.postMeta .post-menu {
     position: relative;
     z-index: 100
 }
 
-main section#sticky li .postMeta .post-menu .icon-menu,
-main section#feed li .postMeta .post-menu .icon-menu {
+li .postMeta .post-menu .icon-menu,
+.postMeta .post-menu .icon-menu {
     cursor: pointer;
     display: block;
     width: 26px;
@@ -2370,18 +2369,18 @@ main section#feed li .postMeta .post-menu .icon-menu {
     color: #B2C0C8
 }
 
-main section#sticky li .postMeta .post-menu .icon-menu:hover,
-main section#feed li .postMeta .post-menu .icon-menu:hover {
+li .postMeta .post-menu .icon-menu:hover,
+.postMeta .post-menu .icon-menu:hover {
     color: #778D99
 }
 
-main section#sticky li .postMeta .post-menu .icon-menu:hover a,
-main section#feed li .postMeta .post-menu .icon-menu:hover a {
+li .postMeta .post-menu .icon-menu:hover a,
+.postMeta .post-menu .icon-menu:hover a {
     color: #778D99
 }
 
-main section#sticky li .postMeta .post-menu .dropdown,
-main section#feed li .postMeta .post-menu .dropdown {
+li .postMeta .post-menu .dropdown,
+.postMeta .post-menu .dropdown {
     display: block;
     background: #FFF;
     position: absolute;
@@ -2394,8 +2393,8 @@ main section#feed li .postMeta .post-menu .dropdown {
     padding: 0
 }
 
-main section#sticky li .postMeta .post-menu .dropdown:after,
-main section#feed li .postMeta .post-menu .dropdown:after {
+li .postMeta .post-menu .dropdown:after,
+.postMeta .post-menu .dropdown:after {
     top: 100%;
     left: 23px;
     border: solid transparent;
@@ -2409,8 +2408,8 @@ main section#feed li .postMeta .post-menu .dropdown:after {
     border-width: 6px
 }
 
-main section#sticky li .postMeta .post-menu .dropdown li,
-main section#feed li .postMeta .post-menu .dropdown li {
+li .postMeta .post-menu .dropdown li,
+.postMeta .post-menu .dropdown li {
     line-height: 46px;
     padding: 0 15px;
     font-size: 12px;
@@ -2421,30 +2420,30 @@ main section#feed li .postMeta .post-menu .dropdown li {
     border-top: 1px solid #EAF1F6
 }
 
-main section#sticky li .postMeta .post-menu .dropdown li:first-child,
-main section#feed li .postMeta .post-menu .dropdown li:first-child {
+li .postMeta .post-menu .dropdown li:first-child,
+.postMeta .post-menu .dropdown li:first-child {
     border-radius: 3px 3px 0 0;
     border-top: none
 }
 
-main section#sticky li .postMeta .post-menu .dropdown li:last-child,
-main section#feed li .postMeta .post-menu .dropdown li:last-child {
+li .postMeta .post-menu .dropdown li:last-child,
+.postMeta .post-menu .dropdown li:last-child {
     border-radius: 0 0 3px 3px
 }
 
-main section#sticky li .postMeta .post-menu .dropdown li:hover,
-main section#feed li .postMeta .post-menu .dropdown li:hover {
+li .postMeta .post-menu .dropdown li:hover,
+.postMeta .post-menu .dropdown li:hover {
     background: #F7F9FB
 }
 
-main section#sticky li .postMeta .post-menu .dropdown li a,
-main section#feed li .postMeta .post-menu .dropdown li a {
+li .postMeta .post-menu .dropdown li a,
+.postMeta .post-menu .dropdown li a {
     color: #7E7E7E;
     text-decoration: none;
     display: block
 }
 
-main section#sticky li.viral .postPhoto .badge,
+li.viral .postPhoto .badge,
 main section#feed li.viral .postPhoto .badge {
     display: block;
     background-image: url(data:image/png;base64,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);
@@ -2454,7 +2453,7 @@ main section#feed li.viral .postPhoto .badge {
     padding-left: 14px
 }
 
-main section#sticky li.showMenu .tile:after,
+li.showMenu .tile:after,
 main section#feed li.showMenu .tile:after {
     content: "";
     position: absolute;
@@ -2467,34 +2466,34 @@ main section#feed li.showMenu .tile:after {
     animation: fadeIn 0.35s ease-in forwards
 }
 
-main section#sticky li.showMenu .tile:hover .share,
+li.showMenu .tile:hover .share,
 main section#feed li.showMenu .tile:hover .share {
     opacity: 0
 }
 
-main section#sticky li.showMenu .postMeta .post-menu .icon-menu,
+li.showMenu .postMeta .post-menu .icon-menu,
 main section#feed li.showMenu .postMeta .post-menu .icon-menu {
     color: #FFF
 }
 
-main section#sticky li.showMenu .postMeta .post-menu .icon-menu:hover,
+li.showMenu .postMeta .post-menu .icon-menu:hover,
 main section#feed li.showMenu .postMeta .post-menu .icon-menu:hover {
     color: #FFF
 }
 
-main section#sticky li.animated:not(.video) .postPhoto .badge:after,
+li.animated:not(.video) .postPhoto .badge:after,
 main section#feed li.animated:not(.video) .postPhoto .badge:after {
     display: block
 }
 
-main section#sticky li.animated:not(.video).loading-gif:hover .postPhoto .badge,
+li.animated:not(.video).loading-gif:hover .postPhoto .badge,
 main section#feed li.animated:not(.video).loading-gif:hover .postPhoto .badge {
     display: block;
     background-image: none;
     padding: 0
 }
 
-main section#sticky li.animated:not(.video).loading-gif:hover .postPhoto .badge:after,
+li.animated:not(.video).loading-gif:hover .postPhoto .badge:after,
 main section#feed li.animated:not(.video).loading-gif:hover .postPhoto .badge:after {
     content: "";
     background: url(data:image/gif;base64,R0lGODlhYAA0AMQQAP///x0dHU9PT56envr6+khISOfn5ygoKPn5+UdHRyIiIicnJ52dnUtLSyMjI0ZGRv///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTM4IDc5LjE1OTgyNCwgMjAxNi8wOS8xNC0wMTowOTowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDphMjJmODQ4NC02MjY3LTRjZjgtOTZlYy1jN2QwMWM4MmQyOWQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QkVDMDdBREI2ODEyMTFFNzhDQUI5QjgyMEMwQkQ1NDgiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QkVDMDdBREE2ODEyMTFFNzhDQUI5QjgyMEMwQkQ1NDgiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTcgKE1hY2ludG9zaCkiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDphMjJmODQ4NC02MjY3LTRjZjgtOTZlYy1jN2QwMWM4MmQyOWQiIHN0UmVmOmRvY3VtZW50SUQ9Inht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) no-repeat center center;
@@ -2504,7 +2503,7 @@ main section#feed li.animated:not(.video).loading-gif:hover .postPhoto .badge:af
     display: block !important
 }
 
-main section#sticky li.animated:not(.video) canvas,
+li.animated:not(.video) canvas,
 main section#feed li.animated:not(.video) canvas {
     position: absolute;
     top: 0;
@@ -2512,122 +2511,124 @@ main section#feed li.animated:not(.video) canvas {
     width: 100%
 }
 
-main section#sticky li.animated:not(.video):hover .postPhoto:after,
+li.animated:not(.video):hover .postPhoto:after,
 main section#feed li.animated:not(.video):hover .postPhoto:after {
     display: none
 }
 
-main section#sticky li.animated:not(.video):hover .postPhoto .badge,
+li.animated:not(.video):hover .postPhoto .badge,
 main section#feed li.animated:not(.video):hover .postPhoto .badge {
     display: none
 }
 
-main section#sticky li.animated:not(.video) .postPhoto .badge,
+li.animated:not(.video) .postPhoto .badge,
 main section#feed li.animated:not(.video) .postPhoto .badge {
     display: block
 }
 
-main section#sticky li.inline-video:not(.video) .postPhoto .badge,
+li.inline-video:not(.video) .postPhoto .badge,
 main section#feed li.inline-video:not(.video) .postPhoto .badge {
     display: block
 }
 
-main section#sticky li.inline-video:not(.video) .postPhoto .badge:after,
+li.inline-video:not(.video) .postPhoto .badge:after,
 main section#feed li.inline-video:not(.video) .postPhoto .badge:after {
     content: "VIDEO";
     display: block
 }
 
-main section#sticky li.inline-video:not(.video):hover video,
+li.inline-video:not(.video):hover video,
 main section#feed li.inline-video:not(.video):hover video {
     display: block
 }
 
-main section#sticky li.inline-video:not(.video):hover .postPhoto .badge,
+li.inline-video:not(.video):hover .postPhoto .badge,
 main section#feed li.inline-video:not(.video):hover .postPhoto .badge {
     display: none
 }
 
-main section#sticky li:hover .postUtils,
-main section#feed li:hover .postUtils {
+:host(:hover) .postUtils,
+li:hover .postUtils  {
     opacity: 1;
     position: absolute
 }
 
-main section#sticky li:hover .postPhoto .share,
-main section#feed li:hover .postPhoto .share {
+li:hover .postPhoto .share,
+:host(:hover) .postPhoto .share  {
     opacity: 1;
     pointer-events: all
 }
 
-main section#sticky li:hover.nsfw .tile .feedLink .postPhoto img,
+li:hover.nsfw .tile .feedLink .postPhoto img,
 main section#feed li:hover.nsfw .tile .feedLink .postPhoto img {
     transition: filter .2s .7s ease-in, transform .2s .8s;
     filter: blur(0);
     transform: scale(1)
 }
 
-main section#sticky li:hover .postPhoto i,
-main section#feed li:hover .postPhoto i {
+:host(:hover) .postPhoto i {
     transition: transform .2s .8s;
     display: none
 }
 
-main section#sticky li:hover .postInfo .created,
-main section#feed li:hover .postInfo .created {
+.postInfo:hover .created {
     opacity: 1
 }
 
-main section#sticky li.fallbackImage a .postPhoto img,
+:host(:hover) .postInfo .created {
+    opacity: 1
+}
+
+li.fallbackImage a .postPhoto img,
 main section#feed li.fallbackImage a .postPhoto img {
     object-position: 100% 100%
 }
 
-main section#sticky li.nsfw .tile,
+li.nsfw .tile,
 main section#feed li.nsfw .tile {
     background-image: none
 }
 
-main section#sticky li.nsfw .tile.image-error,
+li.nsfw .tile.image-error,
 main section#feed li.nsfw .tile.image-error {
     background-image: none
 }
 
-main section#sticky li.nsfw .feedLink .postPhoto,
+li.nsfw .feedLink .postPhoto,
 main section#feed li.nsfw .feedLink .postPhoto {
     overflow: hidden
 }
 
-main section#sticky li.nsfw .feedLink .postPhoto img,
+li.nsfw .feedLink .postPhoto img,
 main section#feed li.nsfw .feedLink .postPhoto img {
     filter: blur(15px);
     transform: scale(1.2);
     -webkit-backface-visibility: hidden
 }
 
-main section#sticky li.nsfw .feedLink .postPhoto.spinner:before,
+li.nsfw .feedLink .postPhoto.spinner:before,
 main section#feed li.nsfw .feedLink .postPhoto.spinner:before {
     display: none
 }
 
-main section#sticky li.nsfw .feedLink .postPhoto.spinner img,
+li.nsfw .feedLink .postPhoto.spinner img,
 main section#feed li.nsfw .feedLink .postPhoto.spinner img {
     transition: none;
     -webkit-filter: none;
     filter: none
 }
 
-main section#sticky li.showSharePromo .tile:hover .postPhoto .share,
+li.showSharePromo .tile:hover .postPhoto .share,
 main section#feed li.showSharePromo .tile:hover .postPhoto .share {
     opacity: 0
 }
 
-main section#sticky li.showSharePromo .feedLink .postPhoto,
+li.showSharePromo .feedLink .postPhoto,
 main section#feed li.showSharePromo .feedLink .postPhoto {
     overflow: hidden
 }
 
-main section#sticky li.showSharePromo .feedLink .postPhoto img,
+li.showSharePromo .feedLink .postPhoto img,
 main section#feed li.showSharePromo .feedLink .postPhoto img {
     filter: blur(2px)
 }
@@ -2760,16 +2761,16 @@ main section#feed ul {
     padding-bottom: 50px
 }
 
-main section#feed ul li {
+{
     box-sizing: border-box
 }
 
-main section#feed ul li.show .feedLink .postPhoto img {
+.feedLink .postPhoto img {
     opacity: 1;
     transition: opacity 0.15s ease-in
 }
 
-main section#feed ul li.show .feedLink .postPhoto img:before {
+.feedLink .postPhoto img:before {
     display: none
 }
 
@@ -2842,7 +2843,7 @@ main section#feed ul li.outside .postMeta {
     display: none
 }
 
-main section#feed ul li .tile {
+.tile {
     box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.05);
     transition: box-shadow .3s ease-out, transform .3s ease-out, opacity .2s ease-out;
     transition-delay: .1s;
@@ -2853,22 +2854,22 @@ main section#feed ul li .tile {
     height: 100%
 }
 
-main section#feed ul li .tile:hover {
+.tile:hover {
     opacity: 1 !important;
     box-shadow: rgba(45, 45, 45, 0.05) 0px 2px 2px, rgba(49, 49, 49, 0.05) 0px 4px 4px, rgba(42, 42, 42, 0.05) 0px 8px 8px, rgba(32, 32, 32, 0.05) 0px 16px 16px, rgba(49, 49, 49, 0.05) 0px 32px 32px, rgba(35, 35, 35, 0.05) 0px 64px 64px;
     transform: translate(0, -4px);
     z-index: 999
 }
 
-main section#feed ul li .tile:hover .feedLink .postInfo .palette .icon-download {
+.tile:hover .feedLink .postInfo .palette .icon-download {
     opacity: 1
 }
 
-main section#feed ul li .tile:hover .postMeta .remove {
+.tile:hover .postMeta .remove {
     opacity: 1
 }
 
-main section#feed ul li .tile:hover .postPhoto:after {
+.tile:hover .postPhoto:after {
     content: "";
     background: -webkit-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.05) 100%);
     background: linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.05) 100%);
@@ -2882,24 +2883,24 @@ main section#feed ul li .tile:hover .postPhoto:after {
     pointer-events: none
 }
 
-main section#feed ul li .tile.image-error .postPhoto {
+.tile.image-error .postPhoto {
     background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjIuMSwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkNhcGFfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiCgkgdmlld0JveD0iMCAwIDgwIDYyLjIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDgwIDYyLjI7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPHN0eWxlIHR5cGU9InRleHQvY3NzIj4KCS5zdDB7ZmlsbDojRTJFMkUyO30KPC9zdHlsZT4KPHBhdGggY2xhc3M9InN0MCIgZD0iTTczLjEsMC4ySDYuOWMtMi41LDAtNC42LDIuMS00LjYsNC42djUyLjhjMCwyLjUsMi4xLDQuNiw0LjYsNC42aDY2LjJjMi41LDAsNC42LTIuMSw0LjYtNC42VjQuOAoJQzc3LjcsMi4zLDc1LjYsMC4yLDczLjEsMC4yeiBNMTkuOCwyM2MwLTIuNSwyLTQuNSw0LjUtNC41czQuNSwyLDQuNSw0LjVzLTIsNC41LTQuNSw0LjVTMTkuOCwyNS41LDE5LjgsMjN6IE0yMyw0My43bDEyLjMtMTcKCUw0Ni43LDQwbDYtOC4ybDcuNSwxMkgyM3oiLz4KPC9zdmc+Cg==);
     background-size: 50px;
     background-repeat: no-repeat;
     background-position: center center
 }
 
-main section#feed ul li .feedLink {
+.feedLink {
     display: block;
     color: #fff;
     text-decoration: none
 }
 
-main section#feed ul li .feedLink:visited .postInfo h3 {
+.feedLink:visited .postInfo h3 {
     color: #bbb
 }
 
-main section#feed ul li .feedLink .postPhoto {
+.feedLink .postPhoto {
     background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjVweCIgaGVpZ2h0PSI1cHgiIHZpZXdCb3g9IjAgMCAyNSA1IiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPgogICAgPCEtLSBHZW5lcmF0b3I6IFNrZXRjaCA0MS4yICgzNTM5NykgLSBodHRwOi8vd3d3LmJvaGVtaWFuY29kaW5nLmNvbS9za2V0Y2ggLS0+CiAgICA8dGl0bGU+R3JvdXAgMzQ8L3RpdGxlPgogICAgPGRlc2M+Q3JlYXRlZCB3aXRoIFNrZXRjaC48L2Rlc2M+CiAgICA8ZGVmcz48L2RlZnM+CiAgICA8ZyBpZD0ibGlnaHQiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgogICAgICAgIDxnIGlkPSJHcm91cC0zNCIgZmlsbD0iI0Q4RDhEOCI+CiAgICAgICAgICAgIDxjaXJjbGUgaWQ9Ik92YWwiIGN4PSIyLjUiIGN5PSIyLjUiIHI9IjIuNSI+PC9jaXJjbGU+CiAgICAgICAgICAgIDxjaXJjbGUgaWQ9Ik92YWwiIGN4PSIxMi41IiBjeT0iMi41IiByPSIyLjUiPjwvY2lyY2xlPgogICAgICAgICAgICA8Y2lyY2xlIGlkPSJPdmFsIiBjeD0iMjIuNSIgY3k9IjIuNSIgcj0iMi41Ij48L2NpcmNsZT4KICAgICAgICA8L2c+CiAgICA8L2c+Cjwvc3ZnPg==);
     background-repeat: no-repeat;
     background-position: center center;
@@ -2909,13 +2910,13 @@ main section#feed ul li .feedLink .postPhoto {
     top: 0
 }
 
-main section#feed ul li .feedLink .postPhoto:before {
+.feedLink .postPhoto:before {
     content: '';
     display: block;
     padding-top: 75%
 }
 
-main section#feed ul li .feedLink .postPhoto:after {
+.feedLink .postPhoto:after {
     content: "";
     background: -webkit-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.05) 100%);
     background: linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.05) 100%);
@@ -2929,7 +2930,7 @@ main section#feed ul li .feedLink .postPhoto:after {
     pointer-events: none
 }
 
-main section#feed ul li .feedLink .postPhoto video {
+.feedLink .postPhoto video {
     height: 100%;
     width: 100%;
     object-position: center;
@@ -2941,7 +2942,7 @@ main section#feed ul li .feedLink .postPhoto video {
     display: none
 }
 
-main section#feed ul li .feedLink .postPhoto img {
+.feedLink .postPhoto img {
     height: 100%;
     width: 100%;
     object-position: center;
@@ -2950,10 +2951,9 @@ main section#feed ul li .feedLink .postPhoto img {
     position: absolute;
     top: 0;
     left: 0;
-    opacity: 0.00001
 }
 
-main section#feed ul li .feedLink .postPhoto img:before {
+.feedLink .postPhoto img:before {
     content: "";
     position: absolute;
     left: 0;
@@ -2962,7 +2962,7 @@ main section#feed ul li .feedLink .postPhoto img:before {
     height: 100%;
 }
 
-main section#feed ul li .feedLink .postPhoto .share-promo {
+.feedLink .postPhoto .share-promo {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -2973,7 +2973,7 @@ main section#feed ul li .feedLink .postPhoto .share-promo {
     z-index: 1
 }
 
-main section#feed ul li .feedLink .postPhoto .share-promo .sharers {
+.feedLink .postPhoto .share-promo .sharers {
     position: absolute;
     text-align: center;
     width: 100%;
@@ -2981,7 +2981,7 @@ main section#feed ul li .feedLink .postPhoto .share-promo .sharers {
     transform: translateY(-50%)
 }
 
-main section#feed ul li .feedLink .postPhoto .share-promo .sharers h4 {
+.feedLink .postPhoto .share-promo .sharers h4 {
     font-size: 14px;
     font-weight: 700;
     line-height: 20px;
@@ -2992,7 +2992,7 @@ main section#feed ul li .feedLink .postPhoto .share-promo .sharers h4 {
     white-space: initial
 }
 
-main section#feed ul li .feedLink .postPhoto .share-promo .sharers span {
+.feedLink .postPhoto .share-promo .sharers span {
     display: inline-block;
     width: 26px;
     height: 26px;
@@ -3009,20 +3009,20 @@ main section#feed ul li .feedLink .postPhoto .share-promo .sharers span {
     transition: color 0.35s, background-color 0.35s
 }
 
-main section#feed ul li .feedLink .postPhoto .share-promo .sharers span.twitter {
+.feedLink .postPhoto .share-promo .sharers span.twitter {
     font-size: 10px
 }
 
-main section#feed ul li .feedLink .postPhoto .share-promo .sharers span.linkedin {
+.feedLink .postPhoto .share-promo .sharers span.linkedin {
     font-size: 11px
 }
 
-main section#feed ul li .feedLink .postPhoto .share-promo .sharers span:hover {
+.feedLink .postPhoto .share-promo .sharers span:hover {
     color: #1f2325;
     background-color: #fff
 }
 
-main section#feed ul li .feedLink .postPhoto .share-promo .sharers span.close {
+.feedLink .postPhoto .share-promo .sharers span.close {
     float: right;
     background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAP9JREFUSA29VQsKgzAMlV1nsutst/D8Y4PuPbGliUlMBxoItW3ep0XNNF0VpZQZuSAf/2oSu3HMggOLJH8jGR/kSxQkJsRsWAwr173BsEDnfXwxSYuwFklMH0svwKPReR8pEQAscnLJq3YKKfJsTtQD95DauW8sAOxERmqFrwwwUyNI9SQiiPY0TzgPiKw7311hSF43HREstwhfgsoTjqCy3hQqpMhvIfvZm4F7noCROoXpE2DrakjI7GNcBGiPnOvunulUL2YIMjWad52PAEdqh8mru7QICr3f9eEX6ojI3zWKrIZzSH5wEtFwdMtMkyuR2rTYfs2+fE7Try7OGH8Xp6ZtzMonxgAAAABJRU5ErkJggg==) no-repeat center center;
     background-size: 15px;
@@ -3030,21 +3030,21 @@ main section#feed ul li .feedLink .postPhoto .share-promo .sharers span.close {
     margin: 0
 }
 
-main section#feed ul li .feedLink .postInfo {
+.feedLink .postInfo {
     position: relative;
     bottom: 0;
     height: 41px;
     padding: 30px 15px 20px 15px
 }
 
-main section#feed ul li .feedLink .postInfo .source-wrapper {
+.feedLink .postInfo .source-wrapper {
     position: absolute;
     top: -12px;
     left: 15px;
     z-index: 1
 }
 
-main section#feed ul li .feedLink .postInfo .source-wrapper:before {
+.feedLink .postInfo .source-wrapper:before {
     position: absolute;
     top: -5px;
     left: -25px;
@@ -3060,7 +3060,7 @@ main section#feed ul li .feedLink .postInfo .source-wrapper:before {
     z-index: 0
 }
 
-main section#feed ul li .feedLink .postInfo .source {
+.feedLink .postInfo .source {
     position: relative;
     display: block;
     background-repeat: no-repeat;
@@ -3073,13 +3073,13 @@ main section#feed ul li .feedLink .postInfo .source {
     top: -1px
 }
 
-main section#feed ul li .feedLink .postInfo .palette {
+.feedLink .postInfo .palette {
     position: absolute;
     top: 8px;
     right: 10px
 }
 
-main section#feed ul li .feedLink .postInfo .palette .icon-download {
+.feedLink .postInfo .palette .icon-download {
     position: absolute;
     display: block;
     color: #B2C0C8;
@@ -3093,11 +3093,11 @@ main section#feed ul li .feedLink .postInfo .palette .icon-download {
     cursor: pointer
 }
 
-main section#feed ul li .feedLink .postInfo .palette .icon-download:hover {
+.feedLink .postInfo .palette .icon-download:hover {
     color: #788E98
 }
 
-main section#feed ul li .feedLink .postInfo .palette span {
+.feedLink .postInfo .palette span {
     display: inline-block;
     float: left;
     width: 14px;
@@ -3107,18 +3107,18 @@ main section#feed ul li .feedLink .postInfo .palette span {
     margin-left: 5px
 }
 
-main section#feed ul li .feedLink .postInfo .palette span:hover {
+.feedLink .postInfo .palette span:hover {
     pointer: cursor;
     height: 18px;
     width: 18px;
     margin: -2px -2px -2px 3px
 }
 
-main section#feed ul li .feedLink .postInfo .palette-full {
+.feedLink .postInfo .palette-full {
     margin: 15px -10px
 }
 
-main section#feed ul li .feedLink .postInfo .palette-full div {
+.feedLink .postInfo .palette-full div {
     display: inline-block;
     width: calc(20% - 2px);
     height: 26px;
@@ -3133,13 +3133,13 @@ main section#feed ul li .feedLink .postInfo .palette-full div {
     font-weight: 600
 }
 
-main section#feed ul li .feedLink .postInfo .palette-full div:hover span {
+.feedLink .postInfo .palette-full div:hover span {
     color: #FFF;
     background: transparent;
     border-color: transparent
 }
 
-main section#feed ul li .feedLink .postInfo .palette-full div span {
+.feedLink .postInfo .palette-full div span {
     display: block;
     width: 100%;
     height: 100%;
@@ -3151,7 +3151,7 @@ main section#feed ul li .feedLink .postInfo .palette-full div span {
     transition: all 0.15s ease-in
 }
 
-main section#feed ul li .feedLink .postInfo h3 {
+.feedLink .postInfo h3 {
     font-size: 13px;
     font-weight: 400;
     line-height: 17px;
@@ -3166,7 +3166,7 @@ main section#feed ul li .feedLink .postInfo h3 {
     text-transform: capitalize
 }
 
-main section#feed ul li .postMeta {
+.postMeta {
     font-size: 10px;
     color: #999;
     width: 100%;
@@ -3175,13 +3175,13 @@ main section#feed ul li .postMeta {
     box-sizing: border-box
 }
 
-main section#feed ul li .postMeta .stats {
+.postMeta .stats {
     color: #B3C0C8;
     font-size: 11px;
     line-height: 22px
 }
 
-main section#feed ul li .postMeta .stats>span {
+.postMeta .stats>span {
     background-position: left center;
     background-repeat: no-repeat;
     background-size: 15px auto;
@@ -3189,34 +3189,34 @@ main section#feed ul li .postMeta .stats>span {
     transition: color 0.35s
 }
 
-main section#feed ul li .postMeta .stats>span span {
+.postMeta .stats>span span {
     vertical-align: middle
 }
 
-main section#feed ul li .postMeta .stats>span [class^="icon-"] {
+.postMeta .stats>span [class^="icon-"] {
     margin-right: 2px;
     font-size: 1em
 }
 
-main section#feed ul li .postMeta .stats>span .icon-dribbble,
-main section#feed ul li .postMeta .stats>span .icon-ph {
+.postMeta .stats>span .icon-dribbble,
+.postMeta .stats>span .icon-ph {
     font-size: 1.4em
 }
 
-main section#feed ul li .postMeta .stats>span .icon-chat {
+.postMeta .stats>span .icon-chat {
     font-size: 1.2em
 }
 
-main section#feed ul li .postMeta .stats>span.action {
+.postMeta .stats>span.action {
     transition: color .35s;
     cursor: pointer
 }
 
-main section#feed ul li .postMeta .stats>span.action:hover {
+.postMeta .stats>span.action:hover {
     color: #778D99
 }
 
-main section#feed ul li .postMeta .dnLink {
+.postMeta .dnLink {
     display: inline-block;
     width: 16px;
     height: 16px;
@@ -3226,7 +3226,7 @@ main section#feed ul li .postMeta .dnLink {
     -webkit-transition: opacity .2s
 }
 
-main section#feed ul li .postMeta .favorite {
+.postMeta .favorite {
     cursor: pointer;
     display: block;
     width: 26px;
@@ -3243,17 +3243,17 @@ main section#feed ul li .postMeta .favorite {
     box-sizing: border-box
 }
 
-main section#feed ul li .postMeta .favorite:hover {
+.postMeta .favorite:hover {
     color: #778D99;
     border: 1px solid #E2EAEE
 }
 
-main section#feed ul li .postMeta .favorite.active {
+.postMeta .favorite.active {
     background-color: #FFB700;
     color: #FFF
 }
 
-main section#feed ul li .postMeta .remove {
+.postMeta .remove {
     opacity: 0;
     cursor: pointer;
     display: block;
@@ -3268,7 +3268,7 @@ main section#feed ul li .postMeta .remove {
     transition: background 0.35s, opacity 0.35s
 }
 
-main section#feed ul li .postMeta .details {
+.postMeta .details {
     display: block;
     height: 50px;
     padding: 12px 15px;
@@ -5881,200 +5881,200 @@ body.dark main h2.resultsHeading span {
 }
 
 body.dark main section#feed ul.home .postInfo h3,
-body.dark main section#sticky ul.home .postInfo h3 {
+body.dark ul.home .postInfo h3 {
     color: #fff
 }
 
 body.dark main section#feed ul.home .postInfo .source,
-body.dark main section#sticky ul.home .postInfo .source {
+body.dark ul.home .postInfo .source {
     color: rgba(255, 255, 255, 0.3)
 }
 
-body.dark main section#feed ul li .feedLink .postPhoto,
-body.dark main section#sticky ul li .feedLink .postPhoto {
+body.dark .feedLink .postPhoto,
+body.dark ul li .feedLink .postPhoto {
     background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjVweCIgaGVpZ2h0PSI1cHgiIHZpZXdCb3g9IjAgMCAyNSA1IiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPgogICAgPCEtLSBHZW5lcmF0b3I6IFNrZXRjaCA0MS4yICgzNTM5NykgLSBodHRwOi8vd3d3LmJvaGVtaWFuY29kaW5nLmNvbS9za2V0Y2ggLS0+CiAgICA8dGl0bGU+R3JvdXAgMzQ8L3RpdGxlPgogICAgPGRlc2M+Q3JlYXRlZCB3aXRoIFNrZXRjaC48L2Rlc2M+CiAgICA8ZGVmcz48L2RlZnM+CiAgICA8ZyBpZD0ibGlnaHQiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIG9wYWNpdHk9IjAuMjAwMDAwMDAzIj4KICAgICAgICA8ZyBpZD0iR3JvdXAtMzQiIGZpbGw9IiNEOEQ4RDgiPgogICAgICAgICAgICA8Y2lyY2xlIGlkPSJPdmFsIiBjeD0iMi41IiBjeT0iMi41IiByPSIyLjUiPjwvY2lyY2xlPgogICAgICAgICAgICA8Y2lyY2xlIGlkPSJPdmFsIiBjeD0iMTIuNSIgY3k9IjIuNSIgcj0iMi41Ij48L2NpcmNsZT4KICAgICAgICAgICAgPGNpcmNsZSBpZD0iT3ZhbCIgY3g9IjIyLjUiIGN5PSIyLjUiIHI9IjIuNSI+PC9jaXJjbGU+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4=)
 }
 
-body.dark main section#feed ul li .feedLink .postInfo .source-wrapper:before,
-body.dark main section#sticky ul li .feedLink .postInfo .source-wrapper:before {
+body.dark .feedLink .postInfo .source-wrapper:before,
+body.dark ul li .feedLink .postInfo .source-wrapper:before {
     background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3NiAzMSI+PGRlZnM+PHN0eWxlPi5jbHMtMXtmaWxsOiMyYjI5MzQ7fTwvc3R5bGU+PC9kZWZzPjx0aXRsZT5iZ19zb3VyY2VfYmFkZ2VfMjwvdGl0bGU+PGcgaWQ9IkxheWVyXzIiIGRhdGEtbmFtZT0iTGF5ZXIgMiI+PGcgaWQ9IkxheWVyXzEtMiIgZGF0YS1uYW1lPSJMYXllciAxIj48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik01Ny42NywxMS45NEM1Mi4zNiw2LjcxLDQ4LjQyLDAsMzguMywwSDM3LjdDMjcuNTgsMCwyMy42NCw2LjcxLDE4LjMzLDExLjk0LDE0LjQ3LDE2Ljc2LDYuNjEsMTcuODEsMCwxOFYzMUg3NlYxOEM2OS4zOSwxNy44MSw2MS41MywxNi43Niw1Ny42NywxMS45NFoiLz48L2c+PC9nPjwvc3ZnPgo=)
 }
 
-body.dark main section#feed ul li .tile,
-body.dark main section#sticky ul li .tile {
+body.dark .tile,
+body.dark ul li .tile {
     box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.05);
     background-color: #2B2934
 }
 
-body.dark main section#feed ul li .tile.image-error .postPhoto,
-body.dark main section#sticky ul li .tile.image-error .postPhoto {
+body.dark .tile.image-error .postPhoto,
+body.dark ul li .tile.image-error .postPhoto {
     background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjIuMSwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkNhcGFfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiCgkgdmlld0JveD0iMCAwIDgwIDYyLjIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDgwIDYyLjI7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPHN0eWxlIHR5cGU9InRleHQvY3NzIj4KCS5zdDB7b3BhY2l0eTowLjc7ZmlsbDojMjMyMDJBO30KPC9zdHlsZT4KPHBhdGggY2xhc3M9InN0MCIgZD0iTTczLjEsMC4ySDYuOWMtMi41LDAtNC42LDIuMS00LjYsNC42djUyLjhjMCwyLjUsMi4xLDQuNiw0LjYsNC42aDY2LjJjMi41LDAsNC42LTIuMSw0LjYtNC42VjQuOAoJQzc3LjcsMi4zLDc1LjYsMC4yLDczLjEsMC4yeiBNMTkuOCwyM2MwLTIuNSwyLTQuNSw0LjUtNC41czQuNSwyLDQuNSw0LjVzLTIsNC41LTQuNSw0LjVTMTkuOCwyNS41LDE5LjgsMjN6IE0yMyw0My43bDEyLjMtMTcKCUw0Ni43LDQwbDYtOC4ybDcuNSwxMkwyMyw0My43TDIzLDQzLjd6Ii8+Cjwvc3ZnPgo=)
 }
 
-body.dark main section#feed ul li .postMeta,
-body.dark main section#sticky ul li .postMeta {
+body.dark .postMeta,
+body.dark ul li .postMeta {
     border-color: #100F13
 }
 
-body.dark main section#feed ul li .feedLink .postInfo .created,
-body.dark main section#sticky ul li .feedLink .postInfo .created {
+body.dark .feedLink .postInfo .created,
+body.dark ul li .feedLink .postInfo .created {
     color: rgba(144, 143, 148, 0.5)
 }
 
 body.dark main section#feed ul li.nsfw .tile,
-body.dark main section#sticky ul li.nsfw .tile {
+body.dark ul li.nsfw .tile {
     background-image: none
 }
 
 body.dark main section#feed ul li.nsfw .postPhoto:before,
-body.dark main section#sticky ul li.nsfw .postPhoto:before {
+body.dark ul li.nsfw .postPhoto:before {
     color: #f4f4f4
 }
 
 body.dark main section#feed ul.dummy:after,
-body.dark main section#sticky ul.dummy:after {
+body.dark ul.dummy:after {
     background: -webkit-linear-gradient(bottom, #222029, transparent 100%)
 }
 
-body.dark main section#sticky ul li .postMeta .stats span.views {
+body.dark ul li .postMeta .stats span.views {
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAWCAYAAADXYyzPAAAAAXNSR0IArs4c6QAAArFJREFUSA3Nlk9IVUEUxr2vwiIyNSgICmpRRPTHRRD4KKisRbSRoIi21joqaFXYKsIgXJVuJYKCFiEYr4IHBkGLisCohUJBkIvK/mn05/X7Lmdk3nVmXu088L1z5pzvzDd37p3RrOk/rFarrYa+AbSBFmv9jP8IXmdZ9s5yDV3WiIHYOjgHQBksb8Cfoj4K7rGIiRQ3KozgGhp7QEdqgkTtKbVBFvA2xJkjjKByRw2lUBO5afDeaqvwSywuuj8kbgosoOYX64QR1QRnwQ6f5MVviAfBCyb6rTw9C3BbgHZnLQjZE5KX6ZlxxVlhJlhE8gLY5ooFf5vxDZp/FvL50PqPMTgcqpN7Dnpdvy98jkJnpKlKQ5+rIbKJeDPQ9o1Re+nVzhDvduOCfwT3knIL9cNEXbiY6Adq14wn/imwS2Nn9FeJrzLpL7y42vp2ULROacGrlAh0RPR+YlaB+NWKR/B1opbXE6rWZNyK5UOuR5r6artB7KtU45h+zHSeY7bfK/g9XjoPpdUtYV0MKcufllUuhtSWILYbRxS3QzF6WcIjsarl89uKLZxhPJngThpHlNYET6URCQ+DTxpFbKuXv+PFxdCv6eOKmbSGS6zyO0F/jEW+iy1cYXUt8hbQjeRMsXKq6YSIq1MSs35p+uf4BMxDEfYz8udp0LnV5CtxGxVjr8jnr4C85rsItqsQsLtwB5T3hRWfBrHDX6V2ncYv+DmG6DKSJ0Gq/4pb/KywZqJZ967O9EGNA6b3MwQeM8GU6vTo49sJjoNWEDK9Bv2lyu93EeqEXQeT7SHW1i91uYCftlzqDvgGZwDBh8X+oLBI9iR6in0gv1qV/0fT1XkfDLmdKfZFhR3RFrCXcRmsB3odIdM2joNR8CAm6BobCjuiPItoxklcN1jxf65xxH6Qn9/2F5uIzvZ4Zm0nAAAAAElFTkSuQmCC)
 }
 
-body.dark main section#sticky ul li .postMeta .stats span.shares {
+body.dark ul li .postMeta .stats span.shares {
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAWCAYAAADafVyIAAAAAXNSR0IArs4c6QAAAXJJREFUSA3VlbtKA0EUhrMaMQTTqJiIYBUwYOulsRMJKVKlE7G0thNsvbSBFHkFH8LSIoK+gpWWFoKFRZT1O8nOMlnnsrtJ44GfM3Mu/z9zdjcpFHJaGIY1sOBrn/MVOPJ1cpc+kWkERHvHJzKtgFdkFgJOkVwCzH0e1mVh1sw4rkArcC4hXaPgEGyDLVACJnsmeBsEwVCSXgGIG9R1wB5Ie+NYxCoAsZzwFLRBHhuLmDohrxK/AuumfIbYoJgshnyD2A1YSeYy7r+pv58YEeQVgj2wmpEsWS7k8qCfkg/tfJbkohqPiNMfsZc3xWYhiU/wEWERL6+rbvHJVXAkALn8Kh6roObfWD+CAXjhyj8qR88B6wu1x/8hl5y6QYu1PvcH9ncQvkpRCjOSS58SaEYk7/i+PJxon8ZZyaW5yFXr+E0gY+hC/oVPa07yEQkCJ+AaeP+ddFXq98GuHjOuKToDZWPSEaRn4huyllK4ZE3+h8QvIdeFUePvOb8AAAAASUVORK5CYII=)
 }
 
-body.dark main section#sticky ul li .postMeta .stats span.chat {
+body.dark ul li .postMeta .stats span.chat {
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAYCAYAAADkgu3FAAAAAXNSR0IArs4c6QAAAkhJREFUSA3NVTFv00AUvrvGSZHCgKB7OzChDhEZAjW2M1RlZeEHwIjEVmChFRViBzEgMbAg1DKABJ2qSvUlbiuE2MiUoYAUAS1CCHVAwb7Hd44cOaZOi+MBD7nnd+993/v87vI4G/I0Go0JpfhFImZzzs5inWCMTnHOu1i/McY78G3iXZbL4+vVavV3Ghw/aEPKrWmiYJ6ILmO/dFBM0odCvoDwkVLl+/V65cdf+3FHu90udTpfFxhTN1BpIb53VBuEn6H0muNceBnP6SvyPO+476tVEFjxgKw2CBcdx1qK8oU2Wq1W0fdpLS8SjQmsO67r3da2fkKi3d3vS+hHrefK75dILaLf50MiKd9MQeZ8fvADSGNE/kPtKSjVvQqhobKBkJxe8AkrGxteVUDNXE6YqTBC0JxAb6ZSI3LaAMekVnSkCzkaJy9CEf84Gsjh2ejTDhTxxuGho0WAYxOnjT8ZDWZ4NlrzwbZn1oXjzLwF4/Lw8Oy7nItbwO/dHxy/61CWe69A8tS2zRVdZnhRLcvaE6JY1/Mle+2DmVDxHDPqSuTlkaFX122+wJm/FPf9qw2CLvpyz7LMu7CDKD85c05HGxnWAMCviMQC+v4+md9XBCVCSm8f67EoCJXt4HO+xn/hOfgquA8DhQH4J/xbuIvSMNgz0zQ/RbnJtZ/YbG7PxkgCIdjjUql4s1araTDMFxpz3XcnDOPXySAwuhjZe45zZj8JmPYeKuqBeBIKphG4XCjwB6iulZaU2a/HuJ5LIAxPYWag/yHxD9Y+zffcXavOAAAAAElFTkSuQmCC)
 }
 
-body.dark main section#sticky ul li .postMeta .stats span.dribbble {
+body.dark ul li .postMeta .stats span.dribbble {
     background-image: url(data:image/png;base64,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)
 }
 
-body.dark main section#sticky ul li .postMeta .stats span.ph {
+body.dark ul li .postMeta .stats span.ph {
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAAAXNSR0IArs4c6QAAAqhJREFUSA29Vr9v00AUvndOi0AghjKlHWABJqRWgdCI2PXADBKwIDYG+CM6MMAfwoKEChI7QxpHIkUEsbCUhS4lU5BAVaImuXu8Z/tcO7GdkDY9yb537333vnv384GYotTrn1YR9X0hsErwZaqLQTf4RfW+ENAAkB8cp/JtkjvIA9Rq3kNy9pIIruXhjmywS9hN17XfHemSUiphvf75CmL/DSLeTsKnawHADsDiY8cp/xztMUboeZ6jlHhPwKVR8H+2O5YlHti2XY/3SxAymdbwkSJbiINmlSnSgZR4N04aEfI0an34hZwfN7LR8XWkPHPTTK80Vl6zOZCx+6XQt0/lRxjsRrHla1J+lnWuaNuldopJ1GrNy1KqMi3DC/qup2FC3SPevWGEvPVnK667vuc4d94irqzSmmUeh+B40d/zmmtKDb7m0ZkIW63WQq/Xu2GwiAUsFHCvUqn8Zh3ZLx4cdL8jihWDiddSFtak1upeXJknd7vi0nCILfPxQPt91aYlecL9SqXSH0R4neWDbyuaUv+6ysJM1NO6LdJUvjJAAJEzW1jlNaS78djlr/FA5GeNnFIvc4ThRZxinkJFBD8ArGcGqjXeMvJ4jcXCuDJbEx6N6LIYRQZ38OFT2jQZBZAi9J+YDMD0aj6PWve3iOx8Tq82R0jvmbiaA4pMo8eCDYiSiFRZiOFz2kAXInC6sE+E0KBubro9qeVjoRS2kloVNjPnMQaHhuSXOqaZq8hcMkgL+KWed4Fd5uJzSAU3g3qe/4Aj2uLb240mLfpMKcWkYdJZ3dnYqK4zLoyQtg7lINTuTOo8g70T+va7RoT8InMOQqMZzOA0tQv7Yp/mtWdQRMgNzj04ByHxJCKl1CKZzzBHtIbcMOVU00RDyvWpJcJxUpZPMtX/ByyZHPKWfKfeAAAAAElFTkSuQmCC)
 }
 
-body.dark main section#feed ul li .feedLink .postMeta {
+body.dark .feedLink .postMeta {
     color: #9C9AA4
 }
 
-body.dark main section#feed ul li .feedLink .postMeta .virality {
+body.dark .feedLink .postMeta .virality {
     background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjIuMSwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCAxMyAxNiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMTMgMTY7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPHN0eWxlIHR5cGU9InRleHQvY3NzIj4KCS5zdDB7ZmlsbDojQ0RDQ0QxO30KPC9zdHlsZT4KPHBhdGggY2xhc3M9InN0MCIgZD0iTTExLjQsMy41QzkuMiw0LjEsOC44LDUuOSw5LDdDNy40LDUuMiw3LjUsMyw3LjUsMGMtNSwxLjktMy44LDcuMy00LDlDMi4yLDgsMiw1LjUsMiw1LjVDMC43LDYuMiwwLDgsMCw5LjUKCUMwLDEzLjEsMi45LDE2LDYuNSwxNlMxMywxMy4xLDEzLDkuNUMxMi45LDcuNCwxMS40LDYuNCwxMS40LDMuNXoiLz4KPC9zdmc+Cg==);
     color: #9C9AA4;
     -webkit-filter: saturate(70%)
 }
 
-body.dark main section#feed ul li .feedLink .postMeta .dnLink {
+body.dark .feedLink .postMeta .dnLink {
     background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAALCAYAAABLcGxfAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA3hpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTExIDc5LjE1ODMyNSwgMjAxNS8wOS8xMC0wMToxMDoyMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDowMmI2YjczOC0yNjY2LTRhMmEtYWZlNS1hZDhmZGQ1MzJlMDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MzkxNTZDN0ZEMEIwMTFFNTg3RjhDMEU5OTYyQkUzQ0UiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MzkxNTZDN0VEMEIwMTFFNTg3RjhDMEU5OTYyQkUzQ0UiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKE1hY2ludG9zaCkiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDowMmI2YjczOC0yNjY2LTRhMmEtYWZlNS1hZDhmZGQ1MzJlMDgiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MDJiNmI3MzgtMjY2Ni00YTJhLWFmZTUtYWQ4ZmRkNTMyZTA4Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+H/MlDQAAALJJREFUeNpi/P//PwMInDt7iQdIpQNxIBDrADEXED8H4oNAPMXIWO8USB0jSANQsSWQvRqIpRmwA5CprUBNtYxnz1xUB3JOAjE/A2GQwATSSaRiECgGaXBhIB5oMjGQBu6CNGwhQcNskIZqIH5FhOINQDwBFqwKUJu0sSh8D8RdQNwNDNa/jEgRdxRIWQHxXiAGsT8D8VUg3g9U+AOmG2ZDGZCdCsQzQdYCFfzB5S6AAAMATzY8EMLzTwMAAAAASUVORK5CYII=) no-repeat center center;
     opacity: .35
 }
 
-body.dark main section#feed ul li .feedLink .postMeta .source {
+body.dark .feedLink .postMeta .source {
     color: #9C9AA4;
     -webkit-filter: saturate(70%)
 }
 
-body.dark main section#feed ul li .feedLink .postMeta .favorite {
+body.dark .feedLink .postMeta .favorite {
     background-color: rgba(255, 255, 255, 0.2);
     color: #908F94
 }
 
-body.dark main section#feed ul li .feedLink .postMeta .favorite:hover {
+body.dark .feedLink .postMeta .favorite:hover {
     color: #FFF;
     border: none;
     background-color: rgba(255, 255, 255, 0.4)
 }
 
-body.dark main section#feed ul li .feedLink .postMeta .favorite.active {
+body.dark .feedLink .postMeta .favorite.active {
     background-color: #FFB700;
     color: #FFF
 }
 
-body.dark main section#feed ul li .feedLink .postMeta .icon-menu {
+body.dark .feedLink .postMeta .icon-menu {
     color: #908F94
 }
 
-body.dark main section#feed ul li .feedLink .postMeta .icon-menu:hover {
+body.dark .feedLink .postMeta .icon-menu:hover {
     color: #FFF
 }
 
-body.dark main section#feed ul li .feedLink .postMeta .stats {
+body.dark .feedLink .postMeta .stats {
     color: #908F94
 }
 
-body.dark main section#feed ul li .feedLink .postMeta .stats>span.action:hover {
+body.dark .feedLink .postMeta .stats>span.action:hover {
     color: #BDBCBF
 }
 
-body.dark main section#feed ul li .feedLink .postInfo h3 {
+body.dark .feedLink .postInfo h3 {
     color: rgba(255, 255, 255, 0.7)
 }
 
-body.dark main section#feed ul li .feedLink .postInfo h4 {
+body.dark .feedLink .postInfo h4 {
     border-color: #100f13
 }
 
-body.dark main section#feed ul li .feedLink:visited .postInfo h3 {
+body.dark .feedLink:visited .postInfo h3 {
     color: #a3a2ab
 }
 
-body.dark main section#feed ul li .feedLink.viral a .postMeta .virality {
+body.dark .feedLink.viral a .postMeta .virality {
     -webkit-filter: grayscale(0);
     background-image: url(../images/icon_viral_hot.svg);
     color: #ff3466
 }
 
-body.dark main section#feed ul li .feedLink.sponsored a .postPhoto img {
+body.dark .feedLink.sponsored a .postPhoto img {
     -webkit-filter: grayscale(0)
 }
 
-body.dark main section#feed ul li .postMeta .icon-menu {
+body.dark .postMeta .icon-menu {
     color: #908F94
 }
 
-body.dark main section#feed ul li .postMeta .icon-menu:hover {
+body.dark .postMeta .icon-menu:hover {
     color: #BDBCBF
 }
 
-body.dark main section#feed ul li .postMeta .favorite {
+body.dark .postMeta .favorite {
     background-color: rgba(255, 255, 255, 0.2);
     color: #908F94
 }
 
-body.dark main section#feed ul li .postMeta .favorite:hover {
+body.dark .postMeta .favorite:hover {
     color: #FFF;
     border-color: transparent;
     background-color: rgba(255, 255, 255, 0.4)
 }
 
-body.dark main section#feed ul li .postMeta .favorite.active {
+body.dark .postMeta .favorite.active {
     background-color: #FFB700;
     color: #FFF
 }
 
-body.dark main section#feed ul li .postMeta .stats {
+body.dark .postMeta .stats {
     color: #908F94
 }
 
-body.dark main section#feed ul li .postMeta .stats>span.action:hover {
+body.dark .postMeta .stats>span.action:hover {
     color: #BDBCBF
 }
 
-body.dark main section#feed ul li .postMeta .controls .close {
+body.dark .postMeta .controls .close {
     color: #908F94
 }
 
-body.dark main section#feed ul li .postMeta .controls .close:hover {
+body.dark .postMeta .controls .close:hover {
     color: #BDBCBF
 }
 
-body.dark main section#feed ul li .postMeta .share {
+body.dark .postMeta .share {
     background: rgba(0, 0, 0, 0.2)
 }
 
-body.dark main section#feed ul li .postMeta .remove {
+body.dark .postMeta .remove {
     background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjIuMSwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCAyNCAyNi41IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyNCAyNi41OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+Cgkuc3Qwe2ZpbGw6IzkwOGY5NDt9Cjwvc3R5bGU+CjxnIGlkPSJTb2xpZCI+Cgk8Zz4KCQk8cG9seWdvbiBjbGFzcz0ic3QwIiBwb2ludHM9IjE1LjgsMi41IDE1LjgsMCA4LjIsMCA4LjIsMi41IDAuNywyLjUgMC43LDYgMjMuMyw2IDIzLjMsMi41IAkJIi8+CgkJPHBhdGggY2xhc3M9InN0MCIgZD0iTTMuMiw5LjN2MTcuMmgxNy42VjkuM0gzLjJ6Ii8+Cgk8L2c+CjwvZz4KPC9zdmc+Cg==)
 }
 
@@ -7284,3 +7284,50 @@ body.halfView .header-autocomplete {
         display: none
     }
 }
+
+.feedLink .postInfo .source {
+    background-image: none;
+    background: #c3c3c3;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.feedLink .postInfo .source.onhold {
+    background: #52524c;
+}
+
+.feedLink .postInfo .source.done {
+    background: #79ec93;
+}
+
+.feedLink .postInfo .source.blocked {
+    background: #ef7a56;
+}
+
+.feedLink .postInfo .source.inprogress {
+    background: #f5e72b;
+}
+
+.stats a:link, .stats a:visited {
+    color: #B2C0C8;
+    text-decoration: none;
+    transition: all 0.35s;
+    display: inline-block;
+    padding: 2px 4px;
+}
+
+.stats a:hover, .stats a:active {
+    color: #778D99;
+    text-decoration: underline;
+    text-decoration-color: #c6eaff;
+    transition: all 0.35s;
+}
+
+todo-item {
+    display: block;
+    padding-bottom: 1em;
+}
+
+
+
+

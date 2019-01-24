@@ -2,8 +2,10 @@ class ToDoItem extends HTMLElement {
 
   constructor() {
     super();
+    this.shadow = this.createShadowRoot();
     this._image = "";
     this._title = "";
+    this._status = "";
   }
 
   get image() {
@@ -14,19 +16,28 @@ class ToDoItem extends HTMLElement {
     }
   }
 
+  get status() {
+    return this._status;
+  }  
+
   get title() {
     return this._title;
   }
 
   static get observedAttributes() {
-    return [ 'title', 'image', 'pinned' ];
+    return [ 'title', 'image', 'status' ];
   }
 
   attributeChangedCallback(name, oldVal, newVal) {
+    var statusDot = this.shadow.querySelector('.created');
 
     switch(name) {
       case 'title':
         this._title = newVal;
+      break;
+      case 'status':
+        this._status = newVal;
+        if (statusDot) statusDot.className = "created " + newVal;
       break;
       case 'image':
         if (newVal != null && newVal != '') {
@@ -41,6 +52,10 @@ class ToDoItem extends HTMLElement {
   connectedCallback() {
     var template = `
 
+      <style>
+        @import "stylesheets/index.css";
+      </style>
+
       <div class="tile">
 
       <a target="_blank" href="#" class="feedLink">
@@ -49,7 +64,7 @@ class ToDoItem extends HTMLElement {
         </div>
         <div class="postInfo">
           <div class="source-wrapper">
-            <span class="source" style="background-image: url(&quot;images/icon_invisionapp.png&quot;);"></span>
+            <span class="source ${this.status}"></span>
           </div>
           <h3 class="hero-title">${this.title}</h3>
           <span class="created">4 days ago</span>
@@ -64,7 +79,7 @@ class ToDoItem extends HTMLElement {
 
           <div class="stats pull-right">
             <span title="" title-top="true">
-              word1, word2
+              <a href="#">word1</a> , <a href="#">word2</a>
             </span>
           </div>
 
@@ -73,7 +88,7 @@ class ToDoItem extends HTMLElement {
     </div>
     `;
 
-    this.innerHTML = template;
+    this.shadow.innerHTML = template;
   }
 
 }
