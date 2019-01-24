@@ -3,6 +3,7 @@
 
 # Wymagana implementacja
 Używać bez API, użyć fetch("db/db.json")
+Dodać możliwość zmiany statusu używając bibioteki http://paulkinzett.github.io/toolbar/
 
 # Dane
 Można sobie zmienić strukturę danych, zostały one wygenerowane
