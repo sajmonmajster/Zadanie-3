@@ -2754,7 +2754,7 @@ main section#feed li.video muzli-video {
 }
 
 main section#feed ul {
-    display: block;
+    display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     grid-auto-flow: row dense;
     grid-gap: 1.9vw;
